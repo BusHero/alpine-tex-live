@@ -3,7 +3,8 @@ from alpine:latest
 RUN apk update \
 	&& apk upgrade \
 	&& apk add \
-	texlive
+	texlive \
+	texlive-luatex
 
 COPY ./smoke_tests/ /smoke-tests
 RUN /smoke-tests/tests.sh 2>&1
